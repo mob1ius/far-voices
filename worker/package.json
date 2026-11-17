@@ -1,0 +1,12 @@
+{
+  "name": "relay",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "stage": "wrangler versions upload --preview-alias staging"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

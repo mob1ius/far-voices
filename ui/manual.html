@@ -1,0 +1,488 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Far Voices Flight Manual</title>
+<meta name="description" content="How to fly the Far Voices deck: what every console does, what the alarms mean, and what happens if you let the cabin freeze.">
+<link rel="icon" href="favicon-32x32.png" sizes="32x32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --paper:#DCD9D0; --page:#F4F2EC; --panel:#EAE7DE;
+  --ink:#16191C; --ink2:#414850; --muted:#6B7078; --rule:#B9B4A8; --hair:#D6D2C6;
+  --red:#A52A1A; --amber:#B0761A; --green:#1E6B4A; --blue:#1F4E79;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --body:"Spectral",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --paper:#0E1013; --page:#171A1F; --panel:#1E2228;
+  --ink:#E7E4DC; --ink2:#B4BAC2; --muted:#878E97; --rule:#39404A; --hair:#2A3038;
+  --red:#F0674F; --amber:#E0A23C; --green:#4FBF8B; --blue:#7FB2E5;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#0E1013; --page:#171A1F; --panel:#1E2228;
+  --ink:#E7E4DC; --ink2:#B4BAC2; --muted:#878E97; --rule:#39404A; --hair:#2A3038;
+  --red:#F0674F; --amber:#E0A23C; --green:#4FBF8B; --blue:#7FB2E5;
+}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{background:var(--paper);color:var(--ink);margin:0;font:17px/1.62 var(--body);
+  padding-inline:clamp(16px,4vw,40px);padding-block:clamp(18px,4vw,44px)}
+.sheet{max-width:1000px;margin:0 auto;background:var(--page);border:1px solid var(--rule);
+  box-shadow:0 1px 0 var(--hair),0 18px 40px rgba(0,0,0,.09)}
+.pad{padding:clamp(20px,4vw,52px)}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;letter-spacing:.01em;text-wrap:balance;margin:0}
+p{margin:0 0 1.05em;max-width:68ch}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:var(--red)}
+strong{font-weight:600}
+
+/* teleprinter output, quoted as printed words rather than as code */
+.tty{font-weight:600;letter-spacing:.06em;color:var(--ink);white-space:nowrap}
+
+.masthead{border-bottom:3px solid var(--ink);padding:clamp(18px,3.4vw,34px) clamp(20px,4vw,52px) 0;position:relative;overflow:hidden}
+.doctype{font:600 12px/1 var(--display);letter-spacing:.34em;text-transform:uppercase;color:var(--red)}
+.masthead h1{font-size:clamp(34px,6.4vw,64px);line-height:.92;text-transform:uppercase;font-weight:700;margin:.18em 0 .1em}
+.subtitle{font-size:clamp(16px,2vw,20px);color:var(--ink2);max-width:60ch;margin-bottom:1.1em}
+.docbar{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));border-top:1px solid var(--rule);
+  font-family:var(--display);font-size:15px}
+.docbar div{padding:9px 12px 11px 0;border-right:1px solid var(--hair)}
+.docbar div:last-child{border-right:0}
+.docbar b{display:block;font:600 10px/1.4 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px 26px;
+  background:var(--panel);border-block:1px solid var(--rule);padding:16px clamp(20px,4vw,52px);
+  font-family:var(--display);font-size:16px}
+.toc a{display:flex;gap:10px;padding:3px 0;text-decoration:none;color:var(--ink2)}
+.toc a:hover{color:var(--red)}
+.toc span{font-family:var(--display);font-size:14px;color:var(--muted);min-width:2.2em}
+
+section{padding-block:clamp(26px,4vw,44px);border-top:1px solid var(--hair)}
+section:first-of-type{border-top:0}
+.secno{font:600 12px/1 var(--display);letter-spacing:.3em;color:var(--red);text-transform:uppercase}
+h2{font-size:clamp(25px,3.6vw,38px);margin:.18em 0 .5em;text-transform:uppercase}
+h3{font-size:clamp(19px,2.3vw,23px);margin:1.6em 0 .45em}
+h4{font-size:16px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink2);margin:1.4em 0 .4em}
+.lede{font-size:19px;color:var(--ink2)}
+
+.tw{overflow-x:auto;margin:1.2em 0 1.5em;border:1px solid var(--rule);background:var(--page)}
+table{border-collapse:collapse;width:100%;min-width:540px;font-family:var(--body);font-size:15.5px}
+caption{caption-side:top;text-align:left;font:600 11px/1.5 var(--display);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--muted);padding:10px 14px 8px;border-bottom:1px solid var(--hair);background:var(--panel)}
+th{font:600 12px/1.3 var(--display);letter-spacing:.14em;text-transform:uppercase;text-align:left;
+  color:var(--ink);background:var(--panel);padding:10px 14px;border-bottom:2px solid var(--ink);
+  border-right:1px solid var(--hair);position:sticky;top:0}
+td{padding:11px 14px;border-bottom:1px solid var(--hair);border-right:1px solid var(--hair);vertical-align:top;color:var(--ink2)}
+th:last-child,td:last-child{border-right:0}
+tbody tr:nth-child(even) td{background:rgba(127,127,127,.045)}
+tbody tr:hover td{background:rgba(165,42,26,.06)}
+td:first-child{color:var(--ink);font-weight:600}
+td.n,th.n{text-align:right;font-family:var(--display);font-size:15px;font-variant-numeric:tabular-nums}
+td .why{display:block;color:var(--muted);font-size:14px;font-style:italic;margin-top:2px}
+
+.box{margin:1.4em 0;border:1px solid var(--rule);background:var(--panel)}
+.box h4{margin:0;padding:8px 14px;font-size:12px;letter-spacing:.22em;color:var(--page);background:var(--ink)}
+.box .inner{padding:12px 14px}
+.box p{margin:0 0 .7em}
+.box p:last-child{margin:0}
+.box.caution h4{background:repeating-linear-gradient(45deg,var(--amber),var(--amber) 9px,#000 9px,#000 18px);color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,.8)}
+.box.warn h4{background:repeating-linear-gradient(45deg,var(--red),var(--red) 9px,#000 9px,#000 18px);color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,.8)}
+.crew{margin:1.4em 0;padding:14px 18px;border-left:4px solid var(--blue);background:var(--panel);
+  font-style:italic;color:var(--ink2)}
+.crew::before{content:"From the crew checklist";display:block;font:600 10px/1.6 var(--display);letter-spacing:.24em;
+  text-transform:uppercase;font-style:normal;color:var(--muted);margin-bottom:.3em}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:14px;margin:1.3em 0}
+.card{border:1px solid var(--rule);background:var(--panel);padding:14px 16px;display:grid;gap:6px;align-content:start}
+.card .rank{font:700 30px/1 var(--display);color:var(--red)}
+.card h4{margin:0;font-size:17px;letter-spacing:.02em;text-transform:none;color:var(--ink)}
+.card p{margin:0;font-size:15px}
+.card .do{font-size:15px;color:var(--ink)}
+.card .do b{font:600 10.5px/1.6 var(--display);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);display:block}
+
+.spoil{margin:1.4em 0;border:1px solid var(--rule);background:var(--panel)}
+.spoil>summary{list-style:none;cursor:pointer;padding:13px 16px;display:flex;gap:12px;align-items:baseline;
+  font-family:var(--display);font-size:16px;letter-spacing:.02em;color:var(--ink)}
+.spoil>summary::-webkit-details-marker{display:none}
+.spoil>summary::before{content:"\203A";display:inline-block;font-weight:700;color:var(--red);
+  transition:transform .15s ease;transform-origin:50% 55%}
+.spoil[open]>summary::before{transform:rotate(90deg)}
+.spoil>summary:hover{color:var(--red)}
+.spoil>summary:focus-visible{outline:2px solid var(--red);outline-offset:-2px}
+.spoil>summary b{font-weight:600}
+.spoil>summary span{font-family:var(--body);font-style:italic;font-size:14.5px;color:var(--muted)}
+.spoil .inner{padding:2px 16px 16px;border-top:1px solid var(--hair)}
+.spoil .inner>*:first-child{margin-top:1em}
+.spoil .tw{background:var(--page)}
+.foot{border-top:3px solid var(--ink);padding:16px clamp(20px,4vw,52px) 26px;font-family:var(--display);
+  font-size:15px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between}
+@media print{body{background:#fff;padding:0}.sheet{box-shadow:none;border:0}th{position:static}}
+</style>
+
+<div class="sheet">
+
+<header class="masthead">
+  <div class="doctype">Flight Data File</div>
+  <h1>Far Voices<br>Flight Manual</h1>
+  <p class="subtitle">How to fly a spacecraft that does not exist, using real radio signals that do.</p>
+  <div class="docbar">
+    <div><b>Document</b>FV-CM-01</div>
+    <div><b>Issue</b>Public</div>
+    <div><b>Vehicle</b>Far Voices deck</div>
+    <div><b>Read first</b>Sections 1 to 3</div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Contents">
+  <a href="#s1"><span>1.0</span>What you are looking at</a>
+  <a href="#s2"><span>2.0</span>Starting up</a>
+  <a href="#s3"><span>3.0</span>The consoles, top to bottom</a>
+  <a href="#s4"><span>4.0</span>Alarms</a>
+  <a href="#s5"><span>5.0</span>Cold and heat</a>
+  <a href="#s6"><span>6.0</span>Spinning, and stopping</a>
+  <a href="#s7"><span>7.0</span>The lower porthole &middot; spoilers</a>
+  <a href="#s8"><span>8.0</span>Things worth trying &middot; spoilers</a>
+  <a href="#s9"><span>9.0</span>Clearing a fault</a>
+</nav>
+
+<div class="pad">
+
+<section id="s1">
+  <div class="secno">Section 1.0</div>
+  <h2>What you are looking at</h2>
+  <p class="lede">A spacecraft cockpit in a browser that sings you the actual radio traffic between Earth and everything humans have left out there.</p>
+
+  <p>Here is the real machinery behind it. NASA runs enormous dish antennas at three sites spread evenly around the planet, in California, Spain and Australia, so that no matter which way Earth is turned, at least one of them is facing deep space. Together they are called the Deep Space Network, and they are the only way anyone talks to Voyager, to the Mars orbiters, to the spacecraft currently falling toward an asteroid. NASA publishes what those dishes are doing right now, updated every few seconds, for anyone to read.</p>
+
+  <p>This site reads that feed and turns it into a choir. Each spacecraft in contact becomes a voice. A stronger signal sings louder; a faster data rate picks a higher voice. When a dish locks onto a spacecraft, the music changes to mark the moment. Nothing is invented and nothing is pre-recorded. If the choir suddenly gains a bass voice, a real antenna somewhere just started hearing a real machine that is very far away.</p>
+
+  <div class="tw"><table>
+    <caption>Table 1-1 &middot; How a link becomes a voice</caption>
+    <thead><tr><th style="width:38%">What the dish is receiving</th><th>What you hear</th></tr></thead>
+    <tbody>
+      <tr><td>Under 40 kb/s</td><td>Bass</td></tr>
+      <tr><td>40 to 250 kb/s</td><td>Tenor</td></tr>
+      <tr><td>250 to 800 kb/s</td><td>Alto</td></tr>
+      <tr><td>Over 800 kb/s</td><td>Soprano</td></tr>
+      <tr><td>A 70-metre dish</td><td>The octavist, an octave below the bass</td></tr>
+      <tr><td>Anything at all on the air</td><td>The ison, the drone that holds underneath</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>Received power sets how loudly a voice sings, so a faint craft is a whisper. A spacecraft running two downlinks at once can land in two voices at the same time, each scored by its own data rate, neither aware the other exists.</p>
+
+  <p>The cockpit around the music is the invented part. It is a 1960s spacecraft console, built out of photographs, with working clocks, gauges, a globe, a teleprinter, a tape deck and a great many switches. Most of those switches do something. Some of them do something you would not expect, which is what most of this manual is about.</p>
+</section>
+
+<section id="s2">
+  <div class="secno">Section 2.0</div>
+  <h2>Starting up</h2>
+
+  <p>The deck opens dark and silent with one button lit: <strong>POWER UP</strong>. Press it. Browsers refuse to make noise until a human clicks something, which is why a spacecraft that runs on sound has to ask permission first.</p>
+
+  <p>Once power is on, the choir begins and the deck fills in around you. The badge at the top left tells you whether you are hearing the sky as it is right now or a recording that plays when the live feed cannot be reached. Green means live. That distinction matters more than it looks: green means the voices you hear are signals that left a spacecraft minutes or hours ago and finished their journey while you were sitting there.</p>
+
+  <p>Sections 7 and 8 are folded shut on purpose. Everything in them is findable by pulling switches, and being handed the answers is a worse way to meet a spacecraft than finding them. They open with one click when you want them.</p>
+
+  <p>Then scroll. The deck keeps going for about a dozen consoles, and every one of them is a photograph with live instruments punched through it. Every one of them has something to touch. Whenever you touch something, a line of text scrolls across the amber advisory screen below the hand controller telling you what it was, what it is for, and occasionally what a real crew thought of it.</p>
+
+  <div class="box caution">
+    <h4>Caution</h4>
+    <div class="inner">
+      <p>Nothing here can hurt your computer, cost you anything, or send you an email. The worst this manual can do is freeze your imaginary spacecraft, and even that thaws.</p>
+      <p>This manual describes the full deck, which needs a keyboard and a pointer. On a phone you get the choir, the map, the archive and the time machine; the ship systems in Sections 4 to 7, the advisory screen and the lower porthole are not fitted to that panel.</p>
+    </div>
+  </div>
+
+  <h3>Keys</h3>
+  <p>Space pauses. Left and right arrows jump between events. Square brackets step through tapes. <strong>F</strong> expands the map, <strong>M</strong> opens music, <strong>S</strong> opens signals, <strong>T</strong> opens the time machine, and <strong>?</strong> opens this manual.</p>
+</section>
+
+<section id="s3">
+  <div class="secno">Section 3.0</div>
+  <h2>The consoles, top to bottom</h2>
+  <p class="lede">Everything you can touch, in the order you meet it while scrolling.</p>
+
+  <div class="tw"><table>
+    <caption>Table 3-1 &middot; Controls by console</caption>
+    <thead><tr><th style="width:23%">Console</th><th style="width:34%">What you can do</th><th>Why bother</th></tr></thead>
+    <tbody>
+      <tr><td>Main console<span class="why">the big window at the top</span></td>
+        <td>Drag inside the glass to look around, zoom, tap a spacecraft or a ground station, expand the map to the whole solar system, switch it between Sun and Earth focus, turn the cabin lighting knob</td>
+        <td>The map is live. The spacecraft in it are where they actually are, and the ones currently being heard are marked. The pointer only turns into a drag handle inside the glass, which is the only place a drag does anything.</td></tr>
+      <tr><td>Guidance<span class="why">the keypad and the joystick</span></td>
+        <td>Type on the DSKY keypad, fly the hand controller, engage attitude hold, fire the four thruster buttons, switch the stick between rate and direct, press the master caution and master alarm lenses, throw the cabin heat switch</td>
+        <td>This is a working replica of the computer that landed Apollo 11, verbs and nouns and all. The sub-panel to its left carries the ship: the caution and warning lamps, the two alarm lenses, the thruster pad and the cabin heat switch.</td></tr>
+      <tr><td>Advisory screen<span class="why">the amber terminal</span></td>
+        <td>Read it</td>
+        <td>Every control you touch prints a line here, and during an alarm it becomes the instructions for fixing what is wrong, with a countdown to the next escalation.</td></tr>
+      <tr><td>Flight director<span class="why">ball, clocks, abort</span></td>
+        <td>Watch the attitude ball, read three station clocks, drag the clock knobs sideways, lift the abort guard, read the three rate numbers beside it</td>
+        <td>Dragging a clock knob winds time itself: the globe turns, the sun moves, and the tape library runs to the hour you land on. It is the best-hidden feature on the deck.</td></tr>
+      <tr><td>Ship systems<span class="why">timer, propellant, cabin</span></td>
+        <td>Read the event timer, the propellant quantity and the cabin thermometer</td>
+        <td>The timer counts the seconds since the last thing that happened. The other two become urgent in Sections 5 and 6.</td></tr>
+      <tr><td>Tape transport</td>
+        <td>Rewind, stop, play, fast forward, turn the double rotary knob, load a recorded hour</td>
+        <td>The archive holds every hour the recorder has captured since the site went live. You can go back and listen to a sky that no longer exists.</td></tr>
+      <tr><td>Tape library</td>
+        <td>Pull any of sixteen spines, page through days, pull the retaining bar</td>
+        <td>The bar releases canisters that then float around your deck. There is no way to put them back.</td></tr>
+      <tr><td>Score recorder</td>
+        <td>Change the chart speed, lift the pen, read the channel and tone windows</td>
+        <td>It is drawing the music as it happens, one colour per voice. Lift the pen during an emergency and there will be no record of it, which is either housekeeping or a cover-up.</td></tr>
+      <tr><td>Card reader<span class="why">punched cards and gauges</span></td>
+        <td>Start, stop and reset the reader, feed it a card deck, read four cabin gauges</td>
+        <td>The thermometer is real. It tells you how cold your cabin is getting.</td></tr>
+      <tr><td>Galley</td>
+        <td>Open the microwave, run it, open the cabinet</td>
+        <td>Running the microwave draws from the same electrical bus as everything else, and it warms the cabin. Both facts are useful later.</td></tr>
+      <tr><td>Navigation<span class="why">the Globus</span></td>
+        <td>Turn the globe, page the card file, watch the three station lamps and the day and hour drums</td>
+        <td>A real Soviet instrument: a clockwork globe that showed a crew where they were. This one shows where the antennas are pointing, and each lamp glows while its complex has a spacecraft on the air.</td></tr>
+      <tr><td>Communications</td>
+        <td>Type on the teletype keyboard, flip the checklist tabs, punch tape, pull three REMOVE BEFORE FLIGHT flags, raise two ARM switches</td>
+        <td>Type a spacecraft's name and press Enter. The archive turns to its slide, the card file flips to its dossier, and the lamp for the complex hearing it pulses. Get the name wrong and it tells you there is no such spacecraft on the roster. It is the closest thing the deck has to a search box, and it is disguised as a 1963 teleprinter.</td></tr>
+      <tr><td>Crew station</td>
+        <td>Open the peanut jar, brew coffee, take the pencil and the card, disturb anything held down with Velcro</td>
+        <td>The jar opens itself whenever a dish locks onto a spacecraft. JPL has opened a jar of peanuts before critical events since 1964, and nobody there is willing to stop.</td></tr>
+      <tr><td>Archive</td>
+        <td>Run the slide projector forwards and back, read spacecraft dossiers, spin the Golden Record</td>
+        <td>Every spacecraft the deck can hear has a photograph and a short history. The record turns at 16&#8532; rpm, the speed it plays at, under a fixed sheen, so the reflection stays put while the grooves go round.</td></tr>
+      <tr><td>Lower porthole</td>
+        <td>Drag to look around, pull the blind, take a photograph, tap whatever drifts past</td>
+        <td>Section 7.0.</td></tr>
+      <tr><td>Footer</td>
+        <td>Throw the main power bus, run the cabin fan, read the logbook and ticker</td>
+        <td>Power off browns out the whole deck and stops the teleprinter mid-sentence. The fan sets everything loose floating, and with the cabin heat off it is the most dangerous control on the ship.</td></tr>
+      <tr><td>Floating objects</td>
+        <td>Tap the duck, glove, sandwich, camera, dice, fish or robot; tap pulled flags</td>
+        <td>The first tap speeds one up and spins it. After that you can only steer it. They drift across every console and they scroll with the deck, because they are in the room with you.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="crew">
+    <p>Read Sections 1 through 3 before flight. Sections 4 through 6 describe abnormal conditions and how to correct them.</p>
+  </div>
+</section>
+
+<section id="s4">
+  <div class="secno">Section 4.0</div>
+  <h2>Alarms</h2>
+
+  <p>Real spacecraft do not politely mention that something is wrong. They have a system with exactly three volumes, caution, warning, and an alarm loud enough to wake a sleeping crew, and it climbs through them in order. This deck does the same, and the climb is the interesting part, because every step is a chance to fix things before the next one.</p>
+
+  <p>When a system is unhappy, its name lights an amber square on the caution and warning panel, on the sub-panel at the left of the guidance console. Nothing else happens yet. Leave it alone for twenty seconds, or break a second thing, and a two-tone warble joins the choir. Break a third and the klaxon starts, the whole deck pulses red, and the singing ducks so you can hear yourself panic.</p>
+
+  <div class="tw"><table>
+    <caption>Table 4-1 &middot; The ladder</caption>
+    <thead><tr><th style="width:16%">Level</th><th style="width:30%">What sets it off</th><th>What the deck does</th></tr></thead>
+    <tbody>
+      <tr><td>Nominal</td><td>Nothing wrong</td><td>Choir only. Most visitors never leave this state, which is fine.</td></tr>
+      <tr><td>Caution</td><td>One fault</td><td>One amber lamp lights. A soft warble every eight seconds.</td></tr>
+      <tr><td>Warning</td><td>Two faults, or one fault left alone for twenty seconds</td><td>Master caution lights, a louder warble every four seconds, the choir thins.</td></tr>
+      <tr><td>Master alarm</td><td>Three faults</td><td>Klaxon every three seconds, red pulse across the deck, choir ducked hard, and the hull creaking.</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>There is one button that makes it stop, and it is a trap worth understanding. Pressing <strong>MASTER ALARM</strong> or <strong>MASTER CAUTION</strong> silences the noise for thirty seconds and drops the deck one level. It does not fix anything. The teleprinter says so in as many words: <span class="tty">MASTER ALARM SILENCED - CONDITION UNCHANGED</span>. The amber lamp stays lit, the fault stays on the list, and in thirty seconds the ship starts up again, because the problem is still there. Quieting an alarm and repairing a spacecraft are different jobs, and only one of them counts.</p>
+
+  <p>While any alarm is up, the amber advisory screen stops telling you jokes and starts telling you what is broken, what to do about it, and how long you have before the next rung.</p>
+
+  <div class="tw"><table>
+    <caption>Table 4-2 &middot; What can go wrong</caption>
+    <thead><tr><th style="width:18%">Lamp</th><th style="width:34%">Means</th><th>Usually because</th></tr></thead>
+    <tbody>
+      <tr><td>MAIN BUS</td><td>The electrical system is off or overloaded</td><td>Power switched off, or the microwave, the percolator and the card reader all running at once</td></tr>
+      <tr><td>CABIN TEMP</td><td>Cabin below 10 &deg;C</td><td>Heat off, fan on, and about a minute of not noticing</td></tr>
+      <tr><td>ATT RATES</td><td>The ship is turning faster than 2 degrees per second</td><td>The joystick, mostly</td></tr>
+      <tr><td>RCS QTY</td><td>Less than 10% thruster propellant left</td><td>Enthusiasm</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>The other squares on the panel are engraved and dark. They are the systems this vehicle carries but does not yet fault, and an unlit lamp on a real spacecraft is the most reassuring thing on the instrument.</p>
+</section>
+
+<section id="s5">
+  <div class="secno">Section 5.0</div>
+  <h2>Cold and heat</h2>
+
+  <p>Space is not cold the way a freezer is cold. A freezer is full of chilled air touching your skin; space is empty, so there is nothing to touch you at all. What actually happens is that a spacecraft glows its heat away as infrared light and never gets any back except from the sun. Left alone, the cabin cools. The only reason any crew stays comfortable is a heater quietly putting the warmth back.</p>
+
+  <p>So there is a <strong>CABIN HEAT</strong> switch at the left of the guidance console, beside the thruster pad. Turn it off and the temperature starts falling toward about 4 &deg;C, which is unpleasant but survivable. Turn the <strong>CABIN FAN</strong> on as well, which lives on the footer next to the power switch, and it heads for about &minus;18 &deg;C instead, because moving air strips heat off everything it touches. That is the joke buried in the design: you will freeze your spacecraft because you wanted fresh air, and the two switches that do it are a whole console apart.</p>
+
+  <div class="tw"><table>
+    <caption>Table 5-1 &middot; Getting cold</caption>
+    <thead><tr><th class="n" style="width:12%">Cabin</th><th style="width:44%">What you notice</th><th>Getting warm again</th></tr></thead>
+    <tbody>
+      <tr><td class="n">22 &deg;C</td><td>Nothing. This is home, and it is where the heater holds you.</td><td>&mdash;</td></tr>
+      <tr><td class="n">19 &deg;C</td><td>Where the heater holds you with the fan running. Still nothing to worry about.</td><td>&mdash;</td></tr>
+      <tr><td class="n">10 &deg;C</td><td>CABIN TEMP lights, and frost starts at the corners of every piece of glass. Metal ticks somewhere behind the panels.</td><td>Heat on, fan off</td></tr>
+      <tr><td class="n">0 &deg;C</td><td>The frost is halfway across the deck and thickening. Everything reads through a haze.</td><td>Heat on, and be patient</td></tr>
+      <tr><td class="n">&minus;10 &deg;C</td><td>The deck ices over completely. The teleprinter says <span class="tty">CABIN FROZEN - CREW UNRESPONSIVE - HEAT TO RESTORE</span>, which is a sentence nobody wants to read about themselves.</td><td>It thaws. It always thaws.</td></tr>
+      <tr><td class="n">&minus;18 &deg;C</td><td>As cold as heat off and fan on will take you, and near the bottom of the thermometer's range. There is nothing worse below it, which is the one mercy in the design.</td><td>Heat on and wait it out</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>Heat has an opposite, and it is funnier. Leave the heater on with the fan off and the cabin sits comfortable. Run the microwave at the same time and it climbs about twelve degrees higher, and above 30 &deg;C the deck starts to sweat: water beads on the glass and everything looks slightly ill. Turn the microwave off, or the fan on, and it passes.</p>
+</section>
+
+<section id="s6">
+  <div class="secno">Section 6.0</div>
+  <h2>Spinning, and stopping</h2>
+
+  <p>On Earth, if you spin a chair and let go, friction stops it. In orbit there is no friction and nothing to push against. Start a spacecraft turning and it turns forever, until you spend something to stop it, and what you spend is gas, squirted out of small nozzles called thrusters. You have a finite amount. When it is gone, it is gone.</p>
+
+  <p>The joystick on the guidance console works this way. In its normal mode it does not point the ship; it makes the ship turn, and the turning continues after you let go. Three numbers on the flight director console, in the band beside the abort guard, show how fast it is turning in degrees per second around each axis: pitch is nose up and down, yaw is nose left and right, roll is the ship rotating like a drill bit. The stars in both windows wheel past to match, because the sky you are looking at is the sky the ship is pointed at.</p>
+
+  <h3>Getting it back</h3>
+  <p>Above 2 degrees per second the ATT RATES lamp lights. Above 6 the ship is tumbling. Recovery is a genuine skill, and it goes like this.</p>
+
+  <div class="tw"><table>
+    <caption>Table 6-1 &middot; Rate null procedure</caption>
+    <thead><tr><th class="n" style="width:8%">Step</th><th style="width:36%">Do this</th><th>Because</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Read the three rate numbers and find the biggest one.</td><td>Fixing the worst axis first is the difference between thirty seconds and five minutes.</td></tr>
+      <tr><td class="n">2</td><td>Push the stick <em>against</em> that rotation.</td><td>The stick is the coarse control, and it burns about three percent of your propellant per second held.</td></tr>
+      <tr><td class="n">3</td><td>Below about half a degree per second, let go of the stick and tap the thruster buttons instead.</td><td>Each tap removes exactly 0.2 degrees per second and costs almost nothing. The stick is too blunt an instrument down here.</td></tr>
+      <tr><td class="n">4</td><td>With every axis under 0.5, engage ATT HOLD.</td><td>The ship then holds that attitude by itself. Try it above the limit and it refuses and tells you why.</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>Two things help you, and neither of them is a tutorial popup. A green cross appears on the attitude ball itself showing which way to push, so following the cross is never wrong. The sound tells you too: a rising chirp means that tap helped, a falling one means it did not. And if you are still tumbling after forty-five seconds, the ship gives up on you politely, prints <span class="tty">AUTO RATE DAMP ENGAGED</span>, and spends its own propellant bringing you back to rest.</p>
+
+  <div class="box caution">
+    <h4>Caution</h4>
+    <div class="inner"><p>You will run out of propellant. Everyone runs out of propellant. When you do, the thrusters answer with a thud and <span class="tty">RCS DEPLETED</span>, and there is exactly one way left to stop spinning: spin the tape reels. Press rewind on the transport and the heavy reels take a degree per second of turn out of the ship. You get three of those. Real spacecraft do this with proper reaction wheels. You are doing it with a tape deck because you spent all the gas showing off.</p></div>
+  </div>
+</section>
+
+<section id="s7">
+  <div class="secno">Section 7.0</div>
+  <h2>The lower porthole</h2>
+  <p class="lede">A second window, below the crew station, deliberately bigger than the one at the top.</p>
+
+  <p>A heavy machined frame, layered glass, a roller blind stowed above it, a sill with a grab rail, and a stowage net holding a camera. It looks ninety degrees off to the side of the top window, so the two feel like two places on one ship rather than two copies of one screen. Everything else in this manual shows up here: turning rates wheel the stars past it, attitude hold stops them, and a cold cabin grows frost across it from the corners.</p>
+
+  <details class="spoil">
+    <summary><b>Show how it works, and what goes past</b> <span>Section 7 gives away things the window is meant to show you on its own.</span></summary>
+    <div class="inner">
+
+  <div class="tw"><table>
+    <caption>Table 7-1 &middot; Working the window</caption>
+    <thead><tr><th style="width:26%">Do this</th><th>Get this</th></tr></thead>
+    <tbody>
+      <tr><td>Drag on the glass</td><td>Look around. Drag far enough while it is frosted and you wipe a patch clear for eight seconds.</td></tr>
+      <tr><td>Press and hold</td><td>The iris opens and faint stars appear that were not there a moment ago. Hold again to stop it back down.</td></tr>
+      <tr><td>Double click</td><td>The window swings to whatever spacecraft is being heard right now.</td></tr>
+      <tr><td>Pull the blind</td><td>Quiet. It also means you miss whatever goes past, which is the cost of quiet and is supposed to sting slightly.</td></tr>
+      <tr><td>Tap the camera in the net</td><td>A photograph of exactly what is out there, which drops into the slide projector on the archive console as a new slide, timestamped and credited to the porthole.</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>And every few minutes, something drifts past outside. One thing at a time, never while an alarm is going, because the deck should know when to stop joking. Tap it and it tells you what it was.</p>
+
+  <div class="tw"><table>
+    <caption>Table 7-2 &middot; Traffic</caption>
+    <thead><tr><th style="width:16%">How often</th><th style="width:38%">What goes by</th><th>If you tap it</th></tr></thead>
+    <tbody>
+      <tr><td>Common</td><td>Ice crystals from a vent, the thing Apollo crews kept mistaking for stars</td><td>The cloud scatters</td></tr>
+      <tr><td>Common</td><td>A hex bolt and washer. Somebody dropped this.</td><td>Logged as a lost item</td></tr>
+      <tr><td>Common</td><td>A lens cap. The camera is fine. The cap is gone.</td><td>Logged as a lost item</td></tr>
+      <tr><td>Common</td><td>A spare glove, waving, apparently</td><td>It waves back</td></tr>
+      <tr><td>Uncommon</td><td>A checklist shedding pages one at a time</td><td>One page sticks to the glass</td></tr>
+      <tr><td>Uncommon</td><td>Corned beef on rye, smuggled aboard Gemini 3 in 1965 and never forgotten</td><td>Contraband</td></tr>
+      <tr><td>Uncommon</td><td>An ushanka, tumbling slowly, ears out</td><td>An observation, in Russian</td></tr>
+      <tr><td>Uncommon</td><td>A derelict satellite, antenna bent, panels dead</td><td>Logged as an untracked object</td></tr>
+      <tr><td>Rare</td><td>A charred reentry capsule, serial illegible</td><td>No record found</td></tr>
+      <tr><td>Rare</td><td>A whale. No explanation is offered, then or ever.</td><td>A bowl of petunias follows it past</td></tr>
+      <tr><td>Rare</td><td>A second visitor, carrying a clipboard, clearly supervising the first</td><td>Both of them look at you</td></tr>
+      <tr><td>Once</td><td>A small pale visitor who glances in as it goes by</td><td>It waves back, then pretends it did not</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>The last one is scheduled once per visit, so patience always pays.</p>
+
+    </div>
+  </details>
+</section>
+
+<section id="s8">
+  <div class="secno">Section 8.0</div>
+  <h2>Things worth trying</h2>
+  <p class="lede">If you only do six things, do these. Ranked by how much you get back for what you put in.</p>
+
+  <details class="spoil">
+    <summary><b>Show the six</b> <span>Every one of these is findable by pulling switches. Opening this hands them to you.</span></summary>
+    <div class="inner">
+
+  <div class="cards">
+    <div class="card"><div class="rank">01</div>
+      <h4>Wind time backwards</h4>
+      <p>The globe turns under a moving sun, the drums count days, and the tape library runs to the hour you land on. Let go and it loads that hour's sky and sings it to you.</p>
+      <div class="do"><b>Where</b>Flight director, grab a station clock knob and drag sideways</div></div>
+    <div class="card"><div class="rank">02</div>
+      <h4>Ask for a spacecraft by name</h4>
+      <p>The projector finds that spacecraft's slide, the card file flips to its dossier, and the antenna currently hearing it pulses on the navigation console. Three consoles, one sentence.</p>
+      <div class="do"><b>Where</b>Comms, click the keyboard, type a name, press Enter</div></div>
+    <div class="card"><div class="rank">03</div>
+      <h4>Fly the ship badly, then fix it</h4>
+      <p>Hold the joystick hard over with attitude hold off, then stop the tumble using the cross on the ball and the four thruster buttons. It is the only thing on the deck that is genuinely hard, which is why it is worth doing.</p>
+      <div class="do"><b>Where</b>Guidance, and Section 6.0 when it goes wrong</div></div>
+    <div class="card"><div class="rank">04</div>
+      <h4>Freeze the cabin on purpose</h4>
+      <p>Come back to frost creeping across every piece of glass on the deck. Fully reversible, deeply unsettling, and the teleprinter is extremely calm about it.</p>
+      <div class="do"><b>Where</b>Cabin heat off at guidance, cabin fan on at the footer, then go and look at something else</div></div>
+    <div class="card"><div class="rank">05</div>
+      <h4>Overload the electrical bus</h4>
+      <p>Three appliances is one too many. The lamp lights, the deck browns out in flickers, and the choir wobbles like a tape machine losing speed.</p>
+      <div class="do"><b>Where</b>The galley microwave, the crew station percolator and the card reader, all at once</div></div>
+    <div class="card"><div class="rank">06</div>
+      <h4>Photograph something out of the window</h4>
+      <p>Wait at the lower porthole until something goes past, then take its picture. It becomes a slide in the archive with a timestamp for a name, filed with real spacecraft.</p>
+      <div class="do"><b>Where</b>Lower porthole, the camera in the stowage net</div></div>
+  </div>
+
+    </div>
+  </details>
+</section>
+
+<section id="s9">
+  <div class="secno">Section 9.0</div>
+  <h2>Clearing a fault</h2>
+  <p class="lede">The same page the flight checklist on the comms console gives you, in one place.</p>
+
+  <div class="tw"><table>
+    <caption>Table 9-1 &middot; Corrective action</caption>
+    <thead><tr><th style="width:18%">Lamp</th><th>What to do</th></tr></thead>
+    <tbody>
+      <tr><td>MAIN BUS</td><td>Close the power switch on the footer. If it is already closed, stop one of the appliances drawing on it: food warmer, percolator, card reader. Running all three at once will brown the deck out.</td></tr>
+      <tr><td>CABIN TEMP</td><td>Cabin heat on at the guidance console, cabin fan off on the footer, then wait about a minute. Below freezing the glass ices over. It still recovers.</td></tr>
+      <tr><td>ATT RATES</td><td>Push the hand controller against the rotation, watching the three rate numbers fall toward zero, then trim with the four thruster buttons. Each pulse removes two tenths. Under half a degree, ATT HOLD will engage and hold it there.</td></tr>
+      <tr><td>RCS QTY</td><td>Stop using the stick. If it reaches zero, full rewind on the tape transport spins the reels and takes roughly a degree per second out of the ship, which is how reaction wheels work on the real thing.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="box warn">
+    <h4>Warning</h4>
+    <div class="inner"><p>Silencing the alarm is not clearing the fault. The tone stops for thirty seconds and the lamp stays lit. If nothing has changed by the time it comes back, it comes back at the same level, and the twenty-second clock toward the next one is still running.</p></div>
+  </div>
+
+  <h3>A word about the noise</h3>
+  <p>The choir never stops. It ducks, thins and drones, but it keeps playing through every emergency, because it is the reason you came. Nothing on the deck flashes faster than twice a second. If your computer asks for reduced motion, the pulsing stops and the deck holds a still tint instead. And a first visit stays completely calm, because all of this takes deliberate input: press Power Up, listen, and you will never see an alarm at all.</p>
+</section>
+
+</div>
+
+<footer class="foot">
+  <span>FV-CM-01 &middot; Public issue</span>
+  <span>Far Voices &middot; farvoices.com</span>
+  <span>Signals courtesy of the NASA Deep Space Network</span>
+</footer>
+</div>

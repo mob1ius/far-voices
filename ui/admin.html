@@ -1,0 +1,126 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Far Voices — logs</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Barlow+Condensed:wght@400;500;600&display=swap">
+<style>
+  :root{--void:#04070D;--solid:#0A1018;--rule:#1B2836;--ice:#93D8EC;
+    --caution:#FF7A3D;--go:#5FD6A4;--dim:#4E6579;--faint:#31445A;--ink:#D9E6F0}
+  *{box-sizing:border-box}
+  /* .bar sets display:flex at equal specificity to the browser's own
+     [hidden] rule, and being later in the sheet it would otherwise win --
+     defeating `hidden` on #filterBar/#pagebar entirely. Made explicit
+     rather than left to depend on cascade order. */
+  [hidden]{display:none!important}
+  body{margin:0;background:var(--void);color:var(--ink);font-family:"IBM Plex Mono",monospace;
+    font-size:12.5px}
+  .bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;
+    padding:10px 16px;background:var(--solid);border-bottom:1px solid var(--rule);
+    flex-wrap:wrap}
+  .bar.filters{top:41px;padding-top:8px;padding-bottom:8px}
+  h1{font-family:"Barlow Condensed",sans-serif;font-weight:500;font-size:19px;
+    letter-spacing:.03em;margin:0;color:var(--ice)}
+  input,select{background:var(--void);color:var(--ink);border:1px solid var(--rule);
+    border-radius:2px;padding:6px 8px;font:inherit;font-size:11.5px}
+  input:focus,select:focus{outline:none;border-color:var(--ice)}
+  input[type=password]{width:220px}
+  input.f{width:112px}
+  input.f.wide{width:150px}
+  input[type=datetime-local]{width:172px}
+  button{background:none;border:1px solid var(--rule);color:var(--ink);border-radius:2px;
+    padding:7px 14px;font:inherit;cursor:pointer;letter-spacing:.04em}
+  button:hover{border-color:var(--ice);color:var(--ice)}
+  button:disabled{opacity:.35;cursor:default;border-color:var(--rule);color:var(--dim)}
+  button:disabled:hover{border-color:var(--rule);color:var(--dim)}
+  button.primary{border-color:var(--ice);color:var(--ice)}
+  button.chip{padding:5px 11px;font-size:11px}
+  button.chip.on{background:var(--ice);color:var(--void);border-color:var(--ice)}
+  .spacer{flex:1}
+  .stat{color:var(--dim);letter-spacing:.06em;white-space:nowrap}
+  .stat b{color:var(--ink)}
+  .lbl{color:var(--faint);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+    white-space:nowrap}
+  .fgroup{display:flex;align-items:center;gap:5px}
+  #wrap{padding:0 0 60px}
+  table{width:100%;border-collapse:collapse}
+  th{position:sticky;top:94px;background:var(--void);text-align:left;font-weight:500;
+    color:var(--dim);letter-spacing:.1em;text-transform:uppercase;font-size:10px;
+    padding:9px 12px;border-bottom:1px solid var(--rule);white-space:nowrap}
+  td{padding:7px 12px;border-bottom:1px solid rgba(27,40,54,.6);white-space:nowrap;
+    font-variant-numeric:tabular-nums}
+  tr:hover td{background:rgba(147,216,236,.05)}
+  tr.suspect td{background:rgba(255,122,61,.07)}
+  tr.gap td{background:rgba(255,122,61,.14);color:var(--caution);text-align:center;
+    letter-spacing:.06em;font-size:11px;padding:10px 12px}
+  tr.suspect:hover td{background:rgba(255,122,61,.13)}
+  .status{padding:2px 7px;border-radius:2px;font-size:11px}
+  .status.ok{color:var(--go)}
+  .status.err{color:var(--caution)}
+  .bot{color:var(--go);font-size:10.5px;letter-spacing:.04em}
+  .flag{color:var(--caution);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
+  .ua{max-width:260px;overflow:hidden;text-overflow:ellipsis;color:var(--dim)}
+  .path{color:var(--ink);cursor:pointer}
+  .path:hover{color:var(--ice);text-decoration:underline}
+  .ip{cursor:pointer}
+  .ip:hover{color:var(--ice);text-decoration:underline}
+  .empty,.gate{padding:80px 20px;text-align:center;color:var(--dim)}
+  .gate input{margin:14px 0}
+  .note{color:var(--faint);font-size:10.5px;letter-spacing:.04em;padding:10px 16px}
+  a{color:var(--ice)}
+  #pagebar{position:sticky;bottom:0;display:flex;align-items:center;gap:10px;
+    padding:10px 16px;background:var(--solid);border-top:1px solid var(--rule)}
+</style>
+
+<div class="bar">
+  <h1>Log</h1>
+  <button class="chip" id="pAll">All</button>
+  <button class="chip" id="pErr">Errors</button>
+  <button class="chip" id="pBot" title="Requests whose User-Agent names itself as a crawler, script or scanner (or sends none at all). The site's own publisher and watchdog are excluded. Cloudflare's verified-bot flag needs Bot Management, which this plan does not have, so this is the working substitute.">Declared bots</button>
+  <button class="chip on" id="pFlag">Flagged (this page)</button>
+  <div class="spacer"></div>
+  <span class="stat" id="stat"></span>
+  <button id="refresh">Refresh</button>
+  <label style="color:var(--dim);display:flex;align-items:center;gap:6px">
+    <input type="checkbox" id="auto"> auto
+  </label>
+  <button id="signout">Sign out</button>
+</div>
+<div class="bar filters" id="filterBar" hidden>
+  <div class="fgroup"><span class="lbl">IP</span><input class="f" id="fIp" placeholder="exact"></div>
+  <div class="fgroup"><span class="lbl">ASN</span><input class="f" id="fAsn" placeholder="7922" style="width:64px"></div>
+  <div class="fgroup"><span class="lbl">Org</span><input class="f wide" id="fOrg" placeholder="contains"></div>
+  <div class="fgroup"><span class="lbl">Country</span><input id="fCountry" placeholder="US" style="width:48px"></div>
+  <div class="fgroup"><span class="lbl">Method</span>
+    <select id="fMethod"><option value="">any</option><option>GET</option><option>POST</option><option>OPTIONS</option><option>HEAD</option></select>
+  </div>
+  <div class="fgroup"><span class="lbl">Path</span><input class="f wide" id="fPath" placeholder="contains"></div>
+  <div class="fgroup"><span class="lbl">Status</span><input id="fStatus" placeholder="404" style="width:52px"></div>
+  <div class="fgroup"><span class="lbl">Status ≥</span><input id="fStatusMin" placeholder="400" style="width:52px"></div>
+  <div class="fgroup"><span class="lbl">UA</span><input class="f wide" id="fUa" placeholder="contains"></div>
+  <div class="fgroup"><span class="lbl">Since</span><input type="datetime-local" id="fSince"></div>
+  <div class="fgroup"><span class="lbl">Until</span><input type="datetime-local" id="fUntil"></div>
+  <button class="primary" id="search">Search</button>
+  <button id="clear">Clear</button>
+</div>
+<div id="wrap">
+  <div class="gate" id="gate">
+    <p>Enter the admin token to view request logs.</p>
+    <input id="token" type="password" placeholder="ADMIN_TOKEN" autofocus>
+    <div><button class="primary" id="enter">Enter</button></div>
+  </div>
+</div>
+<div class="bar" id="pagebar" hidden>
+  <button id="newer">&larr; Newer</button>
+  <button id="older">Older &rarr;</button>
+  <span class="stat" id="pageStat"></span>
+</div>
+<p class="note">Retention 30 days, enforced server-side. Time filters and this page's clock
+are your browser's local time; everything else displays UTC. See <a href="/privacy.html">/privacy.html</a>
+for what is collected and why. This page and its data are not linked from the public site.</p>
+
+<script src="admin.js"></script>

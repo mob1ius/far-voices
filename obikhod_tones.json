@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "title": "Obikhod eight-tone formula tables",
+    "PROVENANCE": "HAND-AUTHORED PLACEHOLDER. These are NOT transcriptions of Lyadov Op.61 or any other edition. They are constructed from the documented STRUCTURE of Russian Obikhod chant (intonation -> reciting tone -> cadence; root-position triads; modal rather than functional harmony; plagal and Phrygian cadences; doubled roots and thirds). Replace tone-by-tone against IMSLP scores and set 'source' accordingly. The generator reads this file at runtime, so swapping in real formulas is a DATA edit, not a code change.",
+    "encoding": "A chord is [semitones_above_final, quality]. Qualities: min, maj, dim, open (root+fifth+octave, no third).",
+    "replace_with": "Lyadov, 10 Settings from the Obikhod, Op.61 (IMSLP, PDF) — d.1914, public domain."
+  },
+  "tones": [
+    { "tone": 1, "name": "Tone 1 — soft, minor", "mode": "aeolian", "source": "hand-authored",
+      "intonation": [[0,"min"],[3,"maj"],[7,"min"]],
+      "recitation": [7,"min"],
+      "cadences": { "medial": [[3,"maj"],[5,"min"]],
+                    "final":  [[10,"maj"],[3,"maj"],[0,"min"]] } },
+
+    { "tone": 2, "name": "Tone 2 — plaintive, Phrygian inflection", "mode": "aeolian-b2", "source": "hand-authored",
+      "intonation": [[0,"min"],[1,"maj"],[0,"min"]],
+      "recitation": [5,"min"],
+      "cadences": { "medial": [[1,"maj"],[0,"min"]],
+                    "final":  [[5,"min"],[1,"maj"],[0,"min"]] } },
+
+    { "tone": 3, "name": "Tone 3 — firm, major", "mode": "ionian", "source": "hand-authored",
+      "intonation": [[0,"maj"],[7,"maj"]],
+      "recitation": [7,"maj"],
+      "cadences": { "medial": [[2,"min"],[7,"maj"]],
+                    "final":  [[5,"maj"],[0,"maj"]] } },
+
+    { "tone": 4, "name": "Tone 4 — mobile, Dorian", "mode": "dorian", "source": "hand-authored",
+      "intonation": [[0,"min"],[5,"maj"],[0,"min"]],
+      "recitation": [3,"maj"],
+      "cadences": { "medial": [[5,"maj"],[0,"min"]],
+                    "final":  [[10,"maj"],[5,"maj"],[0,"min"]] } },
+
+    { "tone": 5, "name": "Tone 5 — grave, low", "mode": "aeolian", "source": "hand-authored",
+      "intonation": [[0,"min"],[8,"maj"]],
+      "recitation": [0,"min"],
+      "cadences": { "medial": [[8,"maj"],[7,"min"]],
+                    "final":  [[5,"min"],[0,"min"]] } },
+
+    { "tone": 6, "name": "Tone 6 — darkest, Lenten", "mode": "phrygian", "source": "hand-authored",
+      "intonation": [[0,"min"],[10,"min"]],
+      "recitation": [8,"maj"],
+      "cadences": { "medial": [[1,"maj"],[0,"min"]],
+                    "final":  [[5,"min"],[1,"maj"],[0,"open"]] } },
+
+    { "tone": 7, "name": "Tone 7 — bright, Mixolydian", "mode": "mixolydian", "source": "hand-authored",
+      "intonation": [[0,"maj"],[10,"maj"]],
+      "recitation": [0,"maj"],
+      "cadences": { "medial": [[10,"maj"],[5,"maj"]],
+                    "final":  [[10,"maj"],[0,"maj"]] } },
+
+    { "tone": 8, "name": "Tone 8 — festal, Paschal", "mode": "ionian", "source": "hand-authored",
+      "intonation": [[0,"maj"],[5,"maj"],[7,"maj"]],
+      "recitation": [7,"maj"],
+      "cadences": { "medial": [[9,"min"],[5,"maj"]],
+                    "final":  [[5,"maj"],[0,"maj"]] } }
+  ]
+}

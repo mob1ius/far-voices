@@ -1,0 +1,17 @@
+{
+ "frame": [
+  2560,
+  416
+ ],
+ "apertures": {
+  "advScreen": [
+   667,
+   111,
+   1229,
+   187
+  ]
+ },
+ "_source": "advisory_strip.png; the screen is the flat-black region cut here",
+ "_painted": "the scroll and brightness knobs are painted, not punched",
+ "_note": "aperture names share one namespace across every strip once the deck stacks them; \"screen\" was already the archive projector"
+}

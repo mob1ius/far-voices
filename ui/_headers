@@ -1,0 +1,12 @@
+# Static assets only. Cloudflare consumes this file and does not serve it, and
+# it does NOT apply to responses the Worker generates -- those get their headers
+# from securityHeaders() in worker/src/worker.js.
+#
+# This file exists because run_worker_first is scoped to documents and endpoints
+# rather than everything (see worker/wrangler.jsonc). That takes asset requests
+# off the Workers request quota, and the cost is that assets no longer pass
+# through securityHeaders(). Of that set, nosniff is the only header that means
+# anything on a subresource: CSP and X-Frame-Options apply to documents, which
+# still go through the Worker.
+/*
+  X-Content-Type-Options: nosniff

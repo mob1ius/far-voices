@@ -1,0 +1,93 @@
+{
+ "frame": [
+  2560,
+  400
+ ],
+ "apertures": {
+  "printout": [
+   1077,
+   61,
+   445,
+   111
+  ],
+  "ckPage": [
+   2002,
+   133,
+   390,
+   186
+  ],
+  "punchTape": [
+   146,
+   215,
+   710,
+   59
+  ],
+  "hereIs": [
+   1490,
+   261,
+   38,
+   38
+  ],
+  "ring1": [
+   751,
+   52,
+   36,
+   40
+  ],
+  "ring2": [
+   1783,
+   52,
+   36,
+   40
+  ],
+  "ring3": [
+   2394,
+   52,
+   36,
+   40
+  ],
+  "ckTabs": [
+   2062,
+   336,
+   322,
+   18
+  ],
+  "ttyKbd": [
+   1075,
+   225,
+   455,
+   110
+  ],
+  "armL": [
+   1776,
+   2,
+   52,
+   48
+  ],
+  "armR": [
+   2388,
+   2,
+   52,
+   48
+  ]
+ },
+ "_tags": [
+  {
+   "gx": 0.528,
+   "gy": 0.066,
+   "ar": 0.1985
+  },
+  {
+   "gx": 0.574,
+   "gy": 0.066,
+   "ar": 0.273
+  },
+  {
+   "gx": 0.284,
+   "gy": 0.072,
+   "ar": 0.3866
+  }
+ ],
+ "_source": "comms_strip.png resized to 2560x400; printout, ckPage and punchTape cut to transparent; rings/key/tabs painted. _tags: grommet position (fraction of the sprite) and aspect of rbf_tag1-3",
+ "_linked": "powerSw/hvacSw/ttyKbd/armL/armR/attHold/knobG-C/drumA-B/retBar are painted controls wired to cross-console effects"
+}

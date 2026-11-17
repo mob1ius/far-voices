@@ -1,0 +1,41 @@
+# Environments
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+
+# Recorded telemetry and logs (regenerated locally)
+data/
+*.log
+*.mid
+
+# Large binaries
+sf/*.sf2
+sf/render/
+sf/web/
+scores/
+
+# Local build products
+ui/overlay/*_raw.png
+ui/overlay/*_detect.png
+ui/overlay/*_preview.png
+ui/overlay/test_*
+ui/overlay/vig_*
+ui/overlay/grey_*
+ui/overlay/*.png
+!ui/overlay/*_overlay.png
+ui/overlay/*.wav
+sf/*.wav
+choir_b64.json
+ui_data*.json
+ui/moments/hour-*.json
+ui/timemachine.json
+
+# Worker local state
+worker/.wrangler/
+worker/node_modules/
+worker/.dev.vars
+worker/.dev.vars.json
+
+# macOS
+.DS_Store

@@ -1,0 +1,64 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "relay",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-08-01",
+  // The custom domain is the only intended way in.
+  "workers_dev": false,
+  "preview_urls": false,
+  "durable_objects": {
+    "bindings": [
+      { "name": "HUB", "class_name": "RelayHub" },
+      { "name": "LOGS", "class_name": "RequestLog" },
+      { "name": "SESSIONS", "class_name": "SessionStats" }
+    ]
+  },
+  "migrations": [
+    { "tag": "v1", "new_sqlite_classes": ["RelayHub"] },
+    { "tag": "v2", "new_sqlite_classes": ["RequestLog"] },
+    { "tag": "v3", "new_sqlite_classes": ["SessionStats"] }
+  ],
+  // Per-visitor throttles, counted per location.
+  "ratelimits": [
+    { "name": "RL_STATUS", "namespace_id": "5101", "simple": { "limit": 60, "period": 60 } },
+    { "name": "RL_LIVE", "namespace_id": "5102", "simple": { "limit": 20, "period": 60 } },
+    { "name": "RL_BEACON", "namespace_id": "5103", "simple": { "limit": 20, "period": 60 } },
+    { "name": "RL_MISS", "namespace_id": "5104", "simple": { "limit": 60, "period": 60 } },
+    { "name": "RL_LOG", "namespace_id": "5105", "simple": { "limit": 120, "period": 60 } }
+  ],
+  "assets": {
+    "directory": "../ui",
+    "binding": "ASSETS",
+    "html_handling": "none",
+    "not_found_handling": "none",
+    // Only documents and endpoints run through the Worker. Static assets are
+    // served by the asset layer (headers for those come from ui/_headers).
+    // Anything added here must also be handled in src/worker.js.
+    "run_worker_first": [
+      "/",
+      "/index.html",
+      "/deck_cockpit.html",
+      "/deck_mobile.html",
+      "/fleetdata.js",
+      "/manual.html",
+      "/privacy.html",
+      "/admin.html",
+      "/404.html",
+      "/robots.txt",
+      "/live",
+      "/publish",
+      "/status",
+      "/beacon",
+      "/admin/*"
+    ]
+  },
+  "send_email": [
+    { "name": "REPORT_MAIL", "destination_address": "farvoices@proton.me" }
+  ],
+  "vars": {
+    "REPORT_TO": "farvoices@proton.me",
+    "REPORT_FROM": "reports@farvoices.com"
+  },
+  "triggers": { "crons": ["0 20 * * 1"] },
+  "observability": { "enabled": true }
+}

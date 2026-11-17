@@ -1,0 +1,51 @@
+{
+ "frame": [
+  2560,
+  400
+ ],
+ "apertures": {
+  "cubby": [
+   112,
+   95,
+   381,
+   216
+  ],
+  "perkKnob": [
+   1283,
+   30,
+   42,
+   48
+  ],
+  "spout": [
+   1180,
+   100,
+   40,
+   40
+  ],
+  "percolator": [
+   1184,
+   38,
+   288,
+   301
+  ],
+  "mug": [
+   1510,
+   147,
+   180,
+   115
+  ],
+  "pencilHome": [
+   1939,
+   192,
+   250,
+   26
+  ],
+  "cardHome": [
+   2259,
+   154,
+   122,
+   108
+  ]
+ },
+ "_source": "shelf_strip.png resized to 2560x400; cubby (and the gap under its rail) cut to transparent; everything else painted"
+}

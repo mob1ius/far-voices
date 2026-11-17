@@ -1,0 +1,13 @@
+{
+  "frame": [2560, 400],
+  "apertures": {
+    "score":      [648, 140, 1100, 166],
+    "settingWin": [2210,  78,  228,  42],
+    "toneWin":    [2210, 182,  227,  42],
+    "chartSpeed": [2205, 265,   86,  90],
+    "penLift":    [2383, 263,   64,  92]
+  },
+  "_source": "score_recorder.png (2624x400) resized to 2560x400; score/settingWin/toneWin are the flat-black regions cut to transparent, traced from the pixels",
+  "_painted": "chartSpeed and penLift are painted controls, not punched: they are hit areas for the rotary knob and the bat-handle toggle",
+  "_labels": "the art engraves the top readout SCORE CHANNEL and the bottom one TONE SETTING; the deck shows the corpus (setting) on top and tone + mode below"
+}

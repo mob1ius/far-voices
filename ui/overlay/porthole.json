@@ -1,0 +1,40 @@
+{
+ "frame": [
+  2560,
+  1269
+ ],
+ "apertures": {
+  "glass": [
+   516,
+   324,
+   843,
+   581
+  ],
+  "blindPull": [
+   850,
+   110,
+   190,
+   140
+  ],
+  "camera": [
+   1790,
+   590,
+   210,
+   190
+  ],
+  "netList": [
+   2110,
+   510,
+   270,
+   310
+  ],
+  "rail": [
+   427,
+   1055,
+   970,
+   95
+  ]
+ },
+ "_source": "porthole_strip.png, cropped to the window and rescaled to 2560 wide; the glass is the flat-black region cut by punch.py --detect",
+ "_painted": "blindPull, camera, netList and rail are hit areas, not punched"
+}

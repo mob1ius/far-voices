@@ -1,0 +1,71 @@
+{
+  "_note": "Tape playback strip, stacked below the footer. Frame 2560x360; the deck offsets these by 1440+420=1860 into the combined 2560x2220 frame. Cut with: punch.py --frame 2560x360 --detect --generic --min-area 900 --max-aspect 9 --threshold 10. Threshold 10 is load bearing -- the wound tape reads at luma 12-21 and the apertures are true #000000, so a looser cutoff punches holes in the tape itself.",
+  "_rotary": "rotary and rotaryInner are NOT punched holes -- the artwork is opaque there. They are the two concentric hit zones of the painted ROTARY knob, listed here so they inherit apRect() and the +1860 strip offset like everything else. The knob's measured geometry, in this frame's coordinates: centre 2441.5,197.5; inner face out to r=25; body out to r=40. Both boxes are deliberately larger than the paint -- at the size this strip renders the outer ring is about six screen pixels wide, which is not a click target, so the zones extend onto bare panel around it. Their painted index marks were erased by unmark_knob.py and are redrawn live by the deck.",
+  "_transport": "tRew/tStop/tPlay/tFf are the four TRANSPORT keys, also painted rather than punched. The slots tile the key bank with no dead zone between them -- boundaries sit on the measured dark gaps at x=2170, 2234, 2295 -- and run y=124-242, the key caps. Functions follow the printed legend row above the keys (rewind, stop, play, fast-forward), not the key caps themselves, which the art got wrong: two of them show a rewind arrow and one an eject arrow.",
+  "frame": [
+    2560,
+    360
+  ],
+  "apertures": {
+    "reelA": [
+      249,
+      160,
+      38,
+      38
+    ],
+    "reelB": [
+      926,
+      160,
+      39,
+      38
+    ],
+    "momentIndex": [
+      1315,
+      72,
+      363,
+      200
+    ],
+    "momentCounter": [
+      1769,
+      125,
+      242,
+      120
+    ],
+    "tRew": [
+      2112,
+      124,
+      58,
+      118
+    ],
+    "tStop": [
+      2170,
+      124,
+      64,
+      118
+    ],
+    "tPlay": [
+      2234,
+      124,
+      61,
+      118
+    ],
+    "tFf": [
+      2295,
+      124,
+      61,
+      118
+    ],
+    "rotary": [
+      2371,
+      127,
+      140,
+      140
+    ],
+    "rotaryInner": [
+      2407,
+      163,
+      68,
+      68
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+ "frame": [
+  2560,
+  400
+ ],
+ "apertures": {
+  "feed": [
+   1131,
+   189,
+   277,
+   49
+  ],
+  "gaugeP": [
+   1818,
+   90,
+   129,
+   129
+  ],
+  "gaugeT": [
+   1992,
+   90,
+   127,
+   129
+  ],
+  "gaugeC": [
+   2166,
+   90,
+   127,
+   129
+  ],
+  "gaugeO": [
+   2339,
+   90,
+   127,
+   129
+  ],
+  "slot1": [
+   199,
+   75,
+   113,
+   175
+  ],
+  "slot2": [
+   532,
+   75,
+   113,
+   175
+  ],
+  "inHopper": [
+   976,
+   81,
+   84,
+   130
+  ],
+  "inStacker": [
+   1476,
+   134,
+   104,
+   160
+  ],
+  "rdStart": [
+   1236,
+   111,
+   36,
+   38
+  ],
+  "rdStop": [
+   1280,
+   111,
+   36,
+   38
+  ],
+  "rdReset": [
+   1323,
+   111,
+   36,
+   38
+  ],
+  "rdLamp": [
+   1373,
+   119,
+   24,
+   24
+  ]
+ },
+ "_deckLabel": [
+  0.04,
+  0.205,
+  0.81,
+  0.125
+ ],
+ "_source": "reader_strip.png (2624x400) resized to 2560x400; feed and the four gauge faces are cut to transparent. slot1/slot2/inHopper/inStacker are where the card_deck.webp sprite stands on the ledge, in the hopper and in the stacker; buttons and lamp are painted. _deckLabel is the blank label on the sprite, as fractions."
+}

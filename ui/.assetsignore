@@ -1,0 +1,72 @@
+# Raw image-generator output. The deck serves the cut overlays and the
+# cropped JPEGs made from these, never the sources themselves.
+overlay/score_recorder.png
+overlay/galley_strip.png
+overlay/microwave_interior.png
+overlay/cabinet_interior.png
+overlay/sliding_door_panel.png
+overlay/*_preview.png
+overlay/nav_strip.png
+overlay/comms_strip.png
+overlay/shelf_strip.png
+overlay/globe_texture.png
+overlay/rolodex_card.png
+overlay/checklist_page.png
+overlay/rbf_tags.png
+overlay/peanut_jar_states.png
+overlay/drift_items.png
+overlay/guidance_strip.png
+overlay/tape_library.png
+overlay/rhc_grip.png
+overlay/egg_duck.png
+overlay/egg_glove.png
+overlay/egg_sandwich.png
+overlay/egg_camera.png
+overlay/egg_dice.png
+overlay/fdai_strip.png
+overlay/abort_guard.png
+overlay/card_deck.png
+overlay/egg_fish.png
+overlay/egg_robot.png
+overlay/reader_strip.png
+overlay/archive_strip.png
+overlay/golden_disc.png
+
+# Ship systems and porthole: raw generator output, Sep 2026
+overlay/porthole_strip.png
+overlay/porthole_2560.png
+overlay/cw_panel.png
+overlay/master_alarm.png
+overlay/thruster_pad.png
+overlay/heat_switch.png
+overlay/rcs_gauge.png
+overlay/rate_bezel.png
+overlay/event_timer.png
+overlay/frost.png
+overlay/breath.png
+overlay/sweat.png
+overlay/reentry.png
+overlay/earth_limb.png
+overlay/porthole_overlay_preview.png
+overlay/pass_ice.png
+overlay/pass_bolt.png
+overlay/pass_cap.png
+overlay/pass_glove.png
+overlay/pass_clipboard.png
+overlay/pass_sandwich.png
+overlay/pass_hat.png
+overlay/pass_sat.png
+overlay/pass_alien.png
+overlay/pass_alien2.png
+overlay/pass_whale.png
+overlay/pass_capsule.png
+
+# Advisory and event-timer strips: raw generator output, Sep 2026
+overlay/advisory_strip.png
+overlay/timer_strip.png
+overlay/timer_2560.png
+# punch.py byproducts. The deck loads advisory.json, timer.json and
+# porthole.json; these carry the cutter's own frame and are not served.
+overlay/advisory_overlay.json
+overlay/timer_overlay.json
+overlay/porthole_overlay.json

@@ -1,0 +1,29 @@
+{
+ "frame": [
+  2560,
+  400
+ ],
+ "apertures": {
+  "mwWindow": [
+   255,
+   119,
+   436,
+   177
+  ],
+  "cabOpening": [
+   1393,
+   135,
+   1052,
+   162
+  ],
+  "mwStart": [
+   1141,
+   163,
+   79,
+   90
+  ]
+ },
+ "_source": "galley_strip.png (2624x400) resized to 2560x400; mwWindow and cabOpening are the flat-black regions cut to transparent",
+ "_painted": "mwStart is a hit area over the painted red START button",
+ "_assets": "galley_mw.jpg, galley_shelves.jpg and galley_door.jpg are crops of microwave_interior, cabinet_interior and sliding_door_panel sized 2x their windows; the door band is y 125-430, squashed ~0.8 vertically to the opening's 6.5:1"
+}

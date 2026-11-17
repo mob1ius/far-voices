@@ -1,0 +1,629 @@
+{
+ "_meta": {
+  "title": "Obikhod tone tables DERIVED from Lyadov Op.61",
+  "PROVENANCE": "Every field is measured from the transcribed score. The Octoechos does not appear in Op.61, so the rotation runs through Lyadov's ten actual settings rather than eight invented tones. mode_confidence reflects how many thirds and sevenths the derivation had to vote on.",
+  "encoding": "[semitones_above_final, quality]"
+ },
+ "tones": [
+  {
+   "tone": 1,
+   "name": "№1 Стихира на Рождество Христово",
+   "occasion": "Sticheron, Nativity",
+   "voices": 6,
+   "source": "derived from Lyadov Op.61 No.1",
+   "n_chords": 132,
+   "mode": "phrygian",
+   "mode_confidence": "high",
+   "evidence": {
+    "m3": 13,
+    "M3": 0,
+    "b7": 23,
+    "n7": 0,
+    "b2": 24,
+    "degrees": 7
+   },
+   "intonation": [
+    [
+     1,
+     "maj"
+    ],
+    [
+     0,
+     "dim"
+    ],
+    [
+     5,
+     "min"
+    ]
+   ],
+   "recitation": [
+    8,
+    "maj"
+   ],
+   "cadences": {
+    "final": [
+     [
+      8,
+      "maj"
+     ],
+     [
+      1,
+      "maj"
+     ],
+     [
+      0,
+      "min3"
+     ]
+    ],
+    "medial": [
+     [
+      1,
+      "maj"
+     ],
+     [
+      8,
+      "maj"
+     ]
+    ]
+   }
+  },
+  {
+   "tone": 2,
+   "name": "№2 Тропарь — Рождество Твое",
+   "occasion": "Troparion, Nativity",
+   "voices": 4,
+   "source": "derived from Lyadov Op.61 No.2",
+   "n_chords": 46,
+   "mode": "mixolydian",
+   "mode_confidence": "low",
+   "evidence": {
+    "m3": 0,
+    "M3": 1,
+    "b7": 6,
+    "n7": 0,
+    "b2": 0,
+    "degrees": 7
+   },
+   "intonation": [
+    [
+     5,
+     "maj"
+    ],
+    [
+     10,
+     "maj"
+    ],
+    [
+     5,
+     "maj"
+    ]
+   ],
+   "recitation": [
+    5,
+    "maj"
+   ],
+   "cadences": {
+    "final": [
+     [
+      0,
+      "maj"
+     ],
+     [
+      0,
+      "maj7"
+     ],
+     [
+      0,
+      "open"
+     ]
+    ],
+    "medial": [
+     [
+      10,
+      "maj"
+     ],
+     [
+      5,
+      "maj"
+     ]
+    ]
+   }
+  },
+  {
+   "tone": 3,
+   "name": "№3 Кондакъ — Дѣва днесь",
+   "occasion": "Kontakion, Nativity",
+   "voices": 4,
+   "source": "derived from Lyadov Op.61 No.3",
+   "n_chords": 118,
+   "mode": "mixolydian",
+   "mode_confidence": "high",
+   "evidence": {
+    "m3": 0,
+    "M3": 7,
+    "b7": 28,
+    "n7": 0,
+    "b2": 0,
+    "degrees": 7
+   },
+   "intonation": [
+    [
+     7,
+     "min"
+    ],
+    [
+     7,
+     "min7"
+    ],
+    [
+     10,
+     "maj"
+    ]
+   ],
+   "recitation": [
+    5,
+    "maj"
+   ],
+   "cadences": {
+    "final": [
+     [
+      5,
+      "maj"
+     ],
+     [
+      9,
+      "min3"
+     ],
+     [
+      0,
+      "maj3"
+     ]
+    ],
+    "medial": [
+     [
+      4,
+      "dim"
+     ],
+     [
+      5,
+      "maj"
+     ]
+    ]
+   }
+  },
+  {
+   "tone": 4,
+   "name": "№4 Тропари — Благообразный Іосифъ",
+   "occasion": "Troparia, Holy Week",
+   "voices": 4,
+   "source": "derived from Lyadov Op.61 No.4",
+   "n_chords": 83,
+   "mode": "ionian",
+   "mode_confidence": "medium",
+   "evidence": {
+    "m3": 0,
+    "M3": 10,
+    "b7": 0,
+    "n7": 2,
+    "b2": 0,
+    "degrees": 7
+   },
+   "intonation": [
+    [
+     2,
+     "min"
+    ],
+    [
+     4,
+     "min"
+    ],
+    [
+     7,
+     "maj"
+    ]
+   ],
+   "recitation": [
+    0,
+    "maj"
+   ],
+   "cadences": {
+    "final": [
+     [
+      0,
+      "open"
+     ],
+     [
+      2,
+      "min7"
+     ],
+     [
+      0,
+      "open"
+     ]
+    ],
+    "medial": [
+     [
+      5,
+      "maj"
+     ],
+     [
+      0,
+      "maj"
+     ]
+    ]
+   }
+  },
+  {
+   "tone": 5,
+   "name": "№5 Чертогъ Твой вижду",
+   "occasion": "Bridal Chamber, Holy Week",
+   "voices": 4,
+   "source": "derived from Lyadov Op.61 No.5",
+   "n_chords": 42,
+   "mode": "ionian",
+   "mode_confidence": "medium",
+   "evidence": {
+    "m3": 0,
+    "M3": 7,
+    "b7": 0,
+    "n7": 1,
+    "b2": 0,
+    "degrees": 7
+   },
+   "intonation": [
+    [
+     9,
+     "min"
+    ],
+    [
+     5,
+     "maj"
+    ],
+    [
+     7,
+     "maj7"
+    ]
+   ],
+   "recitation": [
+    7,
+    "maj"
+   ],
+   "cadences": {
+    "final": [
+     [
+      4,
+      "min7"
+     ],
+     [
+      0,
+      "maj"
+     ],
+     [
+      0,
+      "open"
+     ]
+    ],
+    "medial": [
+     [
+      7,
+      "maj7"
+     ],
+     [
+      7,
+      "maj"
+     ]
+    ]
+   }
+  },
+  {
+   "tone": 6,
+   "name": "№6 Задостойникъ на Воздвиженіе",
+   "occasion": "Zadostoinik, Exaltation",
+   "voices": 4,
+   "source": "derived from Lyadov Op.61 No.6",
+   "n_chords": 72,
+   "mode": "aeolian",
+   "mode_confidence": "high",
+   "evidence": {
+    "m3": 6,
+    "M3": 0,
+    "b7": 18,
+    "n7": 0,
+    "b2": 0,
+    "degrees": 8
+   },
+   "intonation": [
+    [
+     7,
+     "min"
+    ],
+    [
+     0,
+     "min"
+    ],
+    [
+     10,
+     "maj"
+    ]
+   ],
+   "recitation": [
+    10,
+    "maj"
+   ],
+   "cadences": {
+    "final": [
+     [
+      2,
+      "min3"
+     ],
+     [
+      5,
+      "open"
+     ],
+     [
+      0,
+      "min3"
+     ]
+    ],
+    "medial": [
+     [
+      2,
+      "min"
+     ],
+     [
+      0,
+      "min"
+     ]
+    ]
+   }
+  },
+  {
+   "tone": 7,
+   "name": "№7 Херувимская",
+   "occasion": "Cherubic Hymn",
+   "voices": 4,
+   "source": "derived from Lyadov Op.61 No.7",
+   "n_chords": 224,
+   "mode": "ionian",
+   "mode_confidence": "high",
+   "evidence": {
+    "m3": 0,
+    "M3": 50,
+    "b7": 0,
+    "n7": 31,
+    "b2": 0,
+    "degrees": 7
+   },
+   "intonation": [
+    [
+     4,
+     "min"
+    ],
+    [
+     11,
+     "min"
+    ],
+    [
+     7,
+     "maj"
+    ]
+   ],
+   "recitation": [
+    4,
+    "min"
+   ],
+   "cadences": {
+    "final": [
+     [
+      7,
+      "maj"
+     ],
+     [
+      2,
+      "maj"
+     ],
+     [
+      0,
+      "maj7"
+     ]
+    ],
+    "medial": [
+     [
+      2,
+      "maj"
+     ],
+     [
+      4,
+      "min"
+     ]
+    ]
+   }
+  },
+  {
+   "tone": 8,
+   "name": "№8 Тебе поемъ",
+   "occasion": "Anaphora",
+   "voices": 4,
+   "source": "derived from Lyadov Op.61 No.8",
+   "n_chords": 40,
+   "mode": "ionian",
+   "mode_confidence": "low",
+   "evidence": {
+    "m3": 0,
+    "M3": 3,
+    "b7": 0,
+    "n7": 0,
+    "b2": 0,
+    "degrees": 6
+   },
+   "intonation": [
+    [
+     9,
+     "min"
+    ],
+    [
+     7,
+     "maj"
+    ],
+    [
+     0,
+     "maj"
+    ]
+   ],
+   "recitation": [
+    7,
+    "maj"
+   ],
+   "cadences": {
+    "final": [
+     [
+      5,
+      "maj"
+     ],
+     [
+      7,
+      "maj"
+     ],
+     [
+      0,
+      "maj"
+     ]
+    ],
+    "medial": [
+     [
+      7,
+      "maj"
+     ],
+     [
+      0,
+      "maj"
+     ]
+    ]
+   }
+  },
+  {
+   "tone": 9,
+   "name": "№9 Хвалите Господа съ небесъ",
+   "occasion": "Praises",
+   "voices": 5,
+   "source": "derived from Lyadov Op.61 No.9",
+   "n_chords": 81,
+   "mode": "ionian",
+   "mode_confidence": "medium",
+   "evidence": {
+    "m3": 0,
+    "M3": 10,
+    "b7": 0,
+    "n7": 4,
+    "b2": 0,
+    "degrees": 8
+   },
+   "intonation": [
+    [
+     7,
+     "maj3"
+    ],
+    [
+     7,
+     "maj"
+    ],
+    [
+     7,
+     "maj3"
+    ]
+   ],
+   "recitation": [
+    7,
+    "maj"
+   ],
+   "cadences": {
+    "final": [
+     [
+      7,
+      "maj7"
+     ],
+     [
+      0,
+      "maj7"
+     ],
+     [
+      0,
+      "maj"
+     ]
+    ],
+    "medial": [
+     [
+      7,
+      "maj3"
+     ],
+     [
+      7,
+      "maj"
+     ]
+    ]
+   }
+  },
+  {
+   "tone": 10,
+   "name": "№10 Чашу спасенія пріиму",
+   "occasion": "Communion",
+   "voices": 4,
+   "source": "derived from Lyadov Op.61 No.10",
+   "n_chords": 103,
+   "mode": "aeolian",
+   "mode_confidence": "high",
+   "evidence": {
+    "m3": 18,
+    "M3": 0,
+    "b7": 17,
+    "n7": 0,
+    "b2": 0,
+    "degrees": 7
+   },
+   "intonation": [
+    [
+     0,
+     "min"
+    ],
+    [
+     2,
+     "min"
+    ],
+    [
+     7,
+     "min"
+    ]
+   ],
+   "recitation": [
+    10,
+    "maj"
+   ],
+   "cadences": {
+    "final": [
+     [
+      7,
+      "min"
+     ],
+     [
+      0,
+      "min7"
+     ],
+     [
+      0,
+      "min"
+     ]
+    ],
+    "medial": [
+     [
+      3,
+      "maj"
+     ],
+     [
+      5,
+      "min"
+     ]
+    ]
+   }
+  }
+ ]
+}

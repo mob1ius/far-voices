@@ -1,0 +1,82 @@
+{
+  "frame": [
+    2560,
+    400
+  ],
+  "apertures": {
+    "fdai": [
+      289,
+      105,
+      185,
+      213
+    ],
+    "clockG": [
+      900,
+      103,
+      196,
+      209
+    ],
+    "clockM": [
+      1284,
+      103,
+      201,
+      209
+    ],
+    "clockC": [
+      1672,
+      102,
+      199,
+      211
+    ],
+    "fLampG": [
+      1102,
+      55,
+      56,
+      56
+    ],
+    "fLampM": [
+      1493,
+      49,
+      56,
+      56
+    ],
+    "fLampC": [
+      1868,
+      48,
+      56,
+      56
+    ],
+    "abortBtn": [
+      2204,
+      172,
+      84,
+      100
+    ],
+    "abortGuard": [
+      2176,
+      112,
+      140,
+      164
+    ],
+    "knobG": [
+      1071,
+      272,
+      48,
+      48
+    ],
+    "knobM": [
+      1455,
+      272,
+      48,
+      48
+    ],
+    "knobC": [
+      1838,
+      272,
+      48,
+      48
+    ]
+  },
+  "_source": "fdai_strip.png (2624x400) resized to 2560x400; fdai and the three clock faces are the flat-black regions cut to transparent; lamps, ABORT button and guard mount are painted. abortGuard is where the abort_guard.webp cover sits, hinge on the painted lugs.",
+  "_linked": "powerSw/hvacSw/ttyKbd/armL/armR/attHold/knobG-C/drumA-B/retBar are painted controls wired to cross-console effects"
+}

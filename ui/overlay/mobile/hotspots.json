@@ -1,0 +1,97 @@
+{
+ "_note": "Boxes in 1792x2200 frame space, matching mobile_overlay.json. Estimated from the photo, not measured -- press H on the deck to calibrate: drag a box over a painted control, then copy the printed coordinates in here.",
+ "spots": [
+  {
+   "id": "powerToggle",
+   "box": [
+    430,
+    1605,
+    260,
+    305
+   ],
+   "kind": "button",
+   "act": "audio",
+   "label": "POWER"
+  },
+  {
+   "id": "commSelect",
+   "box": [
+    810,
+    1620,
+    300,
+    270
+   ],
+   "kind": "button",
+   "act": "tone",
+   "label": "COMM CH. SELECT \u2014 cycle setting"
+  },
+  {
+   "id": "emergVent",
+   "box": [
+    1160,
+    1590,
+    200,
+    160
+   ],
+   "kind": "button",
+   "act": "prevAcq",
+   "label": "EMERG. VENT \u2014 previous acquisition"
+  },
+  {
+   "id": "testBtn",
+   "box": [
+    1160,
+    1765,
+    200,
+    165
+   ],
+   "kind": "button",
+   "act": "nextAcq",
+   "label": "TEST \u2014 next acquisition"
+  },
+  {
+   "id": "lampAcqLoss",
+   "box": [
+    760,
+    1935,
+    40,
+    40
+   ],
+   "kind": "lamp",
+   "label": "acquisition / loss this frame"
+  },
+  {
+   "id": "lampNoSignal",
+   "box": [
+    875,
+    1935,
+    40,
+    40
+   ],
+   "kind": "lamp",
+   "label": "no downlink this frame"
+  },
+  {
+   "id": "lampAudio",
+   "box": [
+    990,
+    1935,
+    40,
+    40
+   ],
+   "kind": "lampg",
+   "label": "audio on"
+  },
+  {
+   "id": "lampPlaying",
+   "box": [
+    1105,
+    1935,
+    40,
+    40
+   ],
+   "kind": "lampg",
+   "label": "playing"
+  }
+ ]
+}

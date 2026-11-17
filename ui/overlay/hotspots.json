@@ -1,0 +1,112 @@
+{
+ "_note": "Boxes in 2560x1440 frame space, matching cockpit_overlay.json. Press H on the deck to calibrate: drag a box over a painted control, then copy the JSON it prints.",
+ "spots": [
+  {
+   "id": "nixieVelocity",
+   "box": [
+    1902,
+    508,
+    240,
+    72
+   ],
+   "kind": "readout",
+   "fmt": "rate",
+   "label": "VELOCITY"
+  },
+  {
+   "id": "nixieElapsed",
+   "box": [
+    1905,
+    618,
+    290,
+    78
+   ],
+   "kind": "readout",
+   "fmt": "clock",
+   "label": "ELAPSED TIME"
+  },
+  {
+   "id": "counter",
+   "box": [
+    2057,
+    774,
+    138,
+    50
+   ],
+   "kind": "readout",
+   "fmt": "frame",
+   "label": "COUNTER"
+  },
+  {
+   "id": "masterCaution",
+   "box": [
+    2060,
+    838,
+    165,
+    40
+   ],
+   "kind": "lamp",
+   "label": "MASTER CAUTION"
+  },
+  {
+   "id": "annunciator",
+   "box": [
+    415,
+    180,
+    300,
+    285
+   ],
+   "kind": "button",
+   "act": "tone",
+   "label": "MODE SELECT \u2014 cycle setting"
+  },
+  {
+   "id": "switchAudio",
+   "box": [
+    400,
+    610,
+    150,
+    100
+   ],
+   "kind": "button",
+   "act": "audio",
+   "label": "AUDIO"
+  },
+  {
+   "id": "switchPlay",
+   "box": [
+    555,
+    610,
+    150,
+    100
+   ],
+   "kind": "button",
+   "act": "play",
+   "label": "TRANSPORT"
+  },
+  {
+   "id": "knobSpeed",
+   "box": [
+    420,
+    500,
+    120,
+    90
+   ],
+   "kind": "button",
+   "act": "speed",
+   "label": "RATE"
+  },
+  {
+   "id": "knobLight",
+   "kind": "button",
+   "act": "light",
+   "label": "Cabin lighting",
+   "box": [
+    2290,
+    700,
+    120,
+    115
+   ]
+  }
+ ]
+}

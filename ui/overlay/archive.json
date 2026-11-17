@@ -1,0 +1,51 @@
+{
+ "frame": [
+  2560,
+  400
+ ],
+ "apertures": {
+  "screen": [
+   1081,
+   97,
+   398,
+   228
+  ],
+  "lens": [
+   676,
+   160,
+   30,
+   34
+  ],
+  "fwd": [
+   514,
+   170,
+   30,
+   30
+  ],
+  "rev": [
+   514,
+   205,
+   30,
+   30
+  ],
+  "disc": [
+   1862,
+   90,
+   222,
+   222
+  ],
+  "cover": [
+   2221,
+   74,
+   250,
+   256
+  ],
+  "caseGlass": [
+   1786,
+   70,
+   377,
+   241
+  ]
+ },
+ "_source": "archive_strip.png (2624x400) resized to 2560x400; only the projection screen is cut to transparent. disc is where golden_disc.webp turns, centred on the painted spindle; lens is the beam's origin; fwd/rev/cover are painted."
+}

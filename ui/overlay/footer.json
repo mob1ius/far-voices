@@ -1,0 +1,33 @@
+{
+ "frame": [
+  2560,
+  420
+ ],
+ "apertures": {
+  "logbook": [
+   126,
+   102,
+   415,
+   192
+  ],
+  "ticker": [
+   1819,
+   110,
+   580,
+   76
+  ],
+  "powerSw": [
+   620,
+   60,
+   58,
+   95
+  ],
+  "hvacSw": [
+   750,
+   60,
+   58,
+   95
+  ]
+ },
+ "_linked": "powerSw/hvacSw/ttyKbd/armL/armR/attHold/knobG-C/drumA-B/retBar are painted controls wired to cross-console effects"
+}

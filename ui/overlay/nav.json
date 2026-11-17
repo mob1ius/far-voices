@@ -1,0 +1,70 @@
+{
+  "frame": [
+    2560,
+    400
+  ],
+  "apertures": {
+    "globe": [
+      365,
+      98,
+      172,
+      205
+    ],
+    "cardFace": [
+      1547,
+      154,
+      309,
+      155
+    ],
+    "lampG": [
+      1034,
+      66,
+      60,
+      60
+    ],
+    "lampM": [
+      1034,
+      157,
+      60,
+      60
+    ],
+    "lampC": [
+      1034,
+      255,
+      60,
+      60
+    ],
+    "globusKnob": [
+      818,
+      306,
+      42,
+      42
+    ],
+    "knobPrev": [
+      1372,
+      158,
+      70,
+      100
+    ],
+    "knobNext": [
+      1938,
+      158,
+      70,
+      100
+    ],
+    "drumA": [
+      594,
+      246,
+      92,
+      46
+    ],
+    "drumB": [
+      700,
+      246,
+      92,
+      46
+    ]
+  },
+  "_source": "nav_strip.png (2624x400) resized to 2560x400; globe and cardFace are the flat-black regions cut to transparent; lamps and knobs are painted",
+  "_linked": "powerSw/hvacSw/ttyKbd/armL/armR/attHold/knobG-C/drumA-B/retBar are painted controls wired to cross-console effects"
+}

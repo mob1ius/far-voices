@@ -1,0 +1,27 @@
+{
+ "frame": [
+  2560,
+  416
+ ],
+ "apertures": {
+  "dial": [
+   996,
+   98,
+   179,
+   200
+  ],
+  "spare1": [
+   1423,
+   154,
+   285,
+   97
+  ],
+  "spare2": [
+   1910,
+   120,
+   160,
+   169
+  ]
+ },
+ "_source": "timer_strip.png resized to 2560 wide; dial and spare bezels cut from the flat-black regions"
+}

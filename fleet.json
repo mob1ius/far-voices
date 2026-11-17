@@ -1,0 +1,241 @@
+{
+ "_note": "DSN target roster. Distances are NOMINAL order-of-magnitude values in AU for display scale only, not ephemerides. Craft the recorder actually observed are flagged by the exporter.",
+ "fleet": [
+  {
+   "id": "VGR1",
+   "n": "Voyager 1",
+   "au": 173.1,
+   "cls": "interstellar",
+   "ref": true
+  },
+  {
+   "id": "VGR2",
+   "n": "Voyager 2",
+   "au": 139,
+   "cls": "interstellar",
+   "ref": true
+  },
+  {
+   "id": "NHPC",
+   "n": "New Horizons",
+   "au": 60,
+   "cls": "kuiper"
+  },
+  {
+   "id": "JNO",
+   "n": "Juno",
+   "au": 5.1,
+   "cls": "outer"
+  },
+  {
+   "id": "LUCY",
+   "n": "Lucy",
+   "au": 4.2,
+   "cls": "outer"
+  },
+  {
+   "id": "EURC",
+   "n": "Europa Clipper",
+   "au": 3.4,
+   "cls": "outer"
+  },
+  {
+   "id": "PSYC",
+   "n": "Psyche",
+   "au": 2.6,
+   "cls": "belt"
+  },
+  {
+   "id": "ORX",
+   "n": "OSIRIS-APEX",
+   "au": 1.1,
+   "cls": "belt"
+  },
+  {
+   "id": "HYB2",
+   "n": "Hayabusa2",
+   "au": 1.4,
+   "cls": "belt"
+  },
+  {
+   "id": "MRO",
+   "n": "Mars Reconnaissance",
+   "au": 1.6,
+   "cls": "mars"
+  },
+  {
+   "id": "MVN",
+   "n": "MAVEN",
+   "au": 1.6,
+   "cls": "mars"
+  },
+  {
+   "id": "M01O",
+   "n": "Mars Odyssey",
+   "au": 1.6,
+   "cls": "mars"
+  },
+  {
+   "id": "M20",
+   "n": "Perseverance",
+   "au": 1.6,
+   "cls": "mars"
+  },
+  {
+   "id": "MSL",
+   "n": "Curiosity",
+   "au": 1.6,
+   "cls": "mars"
+  },
+  {
+   "id": "TGO",
+   "n": "ExoMars TGO",
+   "au": 1.6,
+   "cls": "mars"
+  },
+  {
+   "id": "MEX",
+   "n": "Mars Express",
+   "au": 1.6,
+   "cls": "mars"
+  },
+  {
+   "id": "EMM",
+   "n": "Emirates Hope",
+   "au": 1.6,
+   "cls": "mars"
+  },
+  {
+   "id": "BEPI",
+   "n": "BepiColombo",
+   "au": 0.6,
+   "cls": "inner"
+  },
+  {
+   "id": "AKTS",
+   "n": "Akatsuki",
+   "au": 0.72,
+   "cls": "inner"
+  },
+  {
+   "id": "PSP",
+   "n": "Parker Solar Probe",
+   "au": 0.3,
+   "cls": "inner"
+  },
+  {
+   "id": "SOLO",
+   "n": "Solar Orbiter",
+   "au": 0.5,
+   "cls": "inner"
+  },
+  {
+   "id": "SOHO",
+   "n": "SOHO",
+   "au": 0.01,
+   "cls": "l1"
+  },
+  {
+   "id": "ACE",
+   "n": "ACE",
+   "au": 0.01,
+   "cls": "l1"
+  },
+  {
+   "id": "WIND",
+   "n": "Wind",
+   "au": 0.01,
+   "cls": "l1"
+  },
+  {
+   "id": "DSCO",
+   "n": "DSCOVR",
+   "au": 0.01,
+   "cls": "l1"
+  },
+  {
+   "id": "IMAP",
+   "n": "IMAP",
+   "au": 0.01,
+   "cls": "l1"
+  },
+  {
+   "id": "SWFO",
+   "n": "SWFO-L1",
+   "au": 0.01,
+   "cls": "l1"
+  },
+  {
+   "id": "JWST",
+   "n": "James Webb",
+   "au": 0.01,
+   "cls": "l2"
+  },
+  {
+   "id": "EUCL",
+   "n": "Euclid",
+   "au": 0.01,
+   "cls": "l2"
+  },
+  {
+   "id": "RST",
+   "n": "Roman",
+   "au": 0.01,
+   "cls": "l2"
+  },
+  {
+   "id": "SPHX",
+   "n": "SPHEREx",
+   "au": 0.006,
+   "cls": "leo"
+  },
+  {
+   "id": "TESS",
+   "n": "TESS",
+   "au": 0.0015,
+   "cls": "heo"
+  },
+  {
+   "id": "CHDR",
+   "n": "Chandra",
+   "au": 0.0009,
+   "cls": "heo"
+  },
+  {
+   "id": "MMS2",
+   "n": "MMS-2",
+   "au": 0.0004,
+   "cls": "heo"
+  },
+  {
+   "id": "MMS3",
+   "n": "MMS-3",
+   "au": 0.0004,
+   "cls": "heo"
+  },
+  {
+   "id": "MMS4",
+   "n": "MMS-4",
+   "au": 0.0004,
+   "cls": "heo"
+  },
+  {
+   "id": "KPLO",
+   "n": "Danuri",
+   "au": 0.0026,
+   "cls": "lunar"
+  },
+  {
+   "id": "LRO",
+   "n": "Lunar Recon Orbiter",
+   "au": 0.0026,
+   "cls": "lunar"
+  },
+  {
+   "id": "CAPS",
+   "n": "CAPSTONE",
+   "au": 0.0026,
+   "cls": "lunar"
+  }
+ ]
+}
